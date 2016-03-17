@@ -1,0 +1,208 @@
+/* HTML5 Form Elements: sico-unit-3-form-elements-hw.css */
+
+/* Change placeholder color in browsers to light brownish orange. */
+:-moz-placeholder { color: #F33; } /* Lighter Orange */
+::-moz-placeholder { color: #F33; }
+::-webkit-input-placeholder { color: #F33; }
+:-ms-input-placeholder  { color: #F33; }
+
+*:focus { outline: none }  /* Remove input autofocus webkit. */
+
+/* Tag Selectors */
+body {
+    font:92%/1.5em Verdana, Arial, sans-serif;
+    color:#C00; /* Deeper Red */
+    margin:0 auto;
+    padding:0;
+    background:#000; /* Black */
+    border:3px solid #900;
+}
+
+header {
+    font:bold 1.7em Calisto, Georgia, serif;
+    color:#F00; /* Red */
+    text-align:center;
+    text-shadow:#900 5px 2px 2px; /* Rust */
+    display:block;
+}
+
+h2 {
+    text-shadow:#900 1px 2px 1px; /* Rust */
+}
+
+main {
+    width:1100px;
+    margin:0 auto;
+    background:#000; /* Black */
+    border:7px solid #C00; /* Deeper Red */
+    box-shadow:-3px -3px 10px #900, 3px 3px 10px #900; /* Rust */
+    border-radius:12px;
+    display:block;
+    position:relative;
+}
+
+input, select, textarea {
+    font-size:92%;
+    color:#600; /* Deeper Rust */
+    padding:5px;
+    border:2px solid #300; /* Very Dark Brown */
+    border-radius:5px;
+    box-shadow:1px 1px 3px #600, 1px 1px 3px #900 inset; /* Deeper Rust and Rust */
+    outline:none;
+}
+
+/* Smaller font size for Firefox for the datetime and datetime-local fields. Default input font-size did not allow complete value to be shown for these fields. */
+input.DateTime {
+    font-size:84%;
+}
+
+/* Expand fields for user input. */
+input:focus {
+    padding-right:20px;
+    transition:padding .25s;
+}
+
+/* Blue border for fields not required. */
+input.NotRequired:focus, textarea:focus {
+    border-color:#60F; /* Royal Blue */
+    box-shadow:0 0 10px #66F, 0 0 10px #66F; /* Lighter shade of Royal Blue. */
+}
+
+input:hover, select:hover, textarea:hover {
+    cursor:pointer;
+}
+
+input:required {
+    background:#FFF url(red-asterisk.png) no-repeat 98% center; /* White Background */
+}
+
+/* Used a Required class to distinguish other required fields from Radio buttons. The RequiredInvalid class is for the required date and time fields which were validated using Javascript.  The green valid focus border did not work correctly with the Javascript border setting but the invalid focus did.  Heavy Deeper Red to show against Red-Orange background. */
+input.Required:focus:invalid, input.RequiredInvalid:focus:invalid, select.Required:focus:invalid {
+    background:#FFF url(invalid.png) no-repeat 98% center;
+    box-shadow:-2px -2px 10px #C00, 2px 2px 10px #C00; /* Deeper Red */
+    border-color:#C00; /* Deeper Red */
+}
+
+input.Required:focus:valid, select.Required:focus:valid {
+    background:#FFF url(valid.png) no-repeat 98% center;
+    box-shadow:0 0 10px #393; /* Green */
+    border-color:#393; /* Green */
+}
+
+/* Used a ValidateStep class to validate number input type with step attribute because in-range and out-of-range do not include step in the test process. Also included an InOutRange class for the number field without the step attribute because Microsoft has not implemented the number input type. */
+input.ValidateStep:focus:invalid, input.InOutRange:focus:invalid {
+    box-shadow:-2px -2px 10px #C00, 2px 2px 10px #C00; /* Deeper Red */
+    border-color:#C00; /* Deeper Red */
+}
+
+input.ValidateStep:focus:valid, input.InOutRange:focus:valid {
+    border-color:#60F; /* Royal Blue */
+    box-shadow:0 0 10px #66F, 0 0 10px #66F; /* Lighter shade of Royal Blue. */
+}
+
+/* Used an InOutRange class to show that in-range and out-of-range work on the number field without step in Firefox and Chrome. */
+input.InOutRange:focus:out-of-range {
+    box-shadow:0 0 10px #C00; /* Deeper Red */
+    border-color:#C00; /* Deeper Red */
+}
+
+input.InOutRange:focus:in-range {
+    border-color:#60F; /* Royal Blue */
+    box-shadow:0 0 10px #66F, 0 0 10px #66F; /* Lighter shade of Royal Blue. */
+}
+
+button.Submit, button.Reset, input.Go {
+    font-size:135%;
+    color:#300; /* Very Dark Brown */
+    font-weight:bold;
+    text-shadow:#900 2px 1px 1px;
+    background-color:#F00;
+    border:2px solid #600;
+    border-radius:8px;
+    box-shadow:0 0 3px #C00, inset 0 0 10px 0 #C00;
+}
+
+input.Go {
+    font-size:125%;
+}
+
+button.Submit:hover, button.Reset:hover, input.Go.hover {
+    cursor:pointer;
+}
+
+button.Submit:active, button.Reset:active, input.Go.active {
+    border:3px solid #300; /* Very Dark Brown */
+    box-shadow:0 0 3px #F93, inset 0 0 10px 0 #F93; /* Light Orange */
+}
+
+/* ID Selectors */
+/* Note at top left of page to indicate an asterisk is used to denote required fields. */
+#RequiredNotification {
+    font-size:80%;
+    font-weight:bold;
+    float:right;
+    margin-right:40px;
+    color:#C00; /* Deeper Red */
+}
+
+#SubmitReset {
+    margin:20px 0 20px 20px;
+}
+
+/* Adjacent Selectors */
+/* Displays field hint as popup when user enters field. */
+input:focus+ .FormHint {
+    display:inline;
+}
+
+/* Class Selectors */
+/* Styling for div sections. */
+.PracticeSections {
+    width:1000px;
+    margin:20px 85px 20px 15px;
+    padding:10px 30px 30px 30px;
+    color:#000; /* Black */
+    font-weight:bold;
+    background:#ff4500; /* Red-Orange */
+    border:5px solid #C00; /* Deeper Red */
+    box-shadow:-3px -3px 10px #900; /* Rust */
+    border-radius:12px;
+    position:relative;
+    display:block;
+}
+
+/* No Border for range input type. */
+.NoBorder {
+    border:none;
+    box-shadow:none;
+}
+
+/* Popup Styling */
+.FormHint {
+    background:#C00;
+    border-radius:3px;
+    color:white;
+    font-size:80%;
+    font-weight:bold;
+    padding:1px 6px;
+    margin-left:10px;
+    z-index:999;
+    position:absolute;
+    display:none;
+}
+
+/* Popup Arrow */
+.FormHint::after {
+    content:"\25C0";
+    color:#C00;
+    position:absolute;
+    top:1px;
+    left:-6px;
+}
+
+.DateAndTimeFormat {
+    font-size:75%;
+    color:#FC9;
+    font-weight:bold;
+    text-shadow:#F93 1px 1px 1px;
+}

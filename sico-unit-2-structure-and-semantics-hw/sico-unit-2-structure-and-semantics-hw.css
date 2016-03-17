@@ -1,0 +1,236 @@
+/* HTML5 Structure and Semantics: sico-unit-2-structure-and-semantics-hw.css */
+
+
+/* Tag Selectors */
+body {
+    font:84%/1.5em Verdana, Arial, sans-serif;
+    color:#300; /* Dark Maroon */
+    margin:0 auto;
+    padding:0;
+    background:#F00; /* Bright Orange Red */
+    border:3px solid #900; /* Dark Rust */
+}
+
+header, section, nav, article, aside, figure, figcaption {
+    display:block;
+}
+
+header h1 {
+    font:bold 3.0em Calisto, Georgia, serif;
+    color:#000; /* Black */
+    text-shadow:#930 1px 1px 1px; /* Medium Brown */
+    opacity: 0.8;
+    text-align:center;
+}
+
+h2 {
+    color:#900; /* Dark Rust */
+    text-shadow:#C63 1px 1px 1px; /* Light Brown */
+    font-size:1.7em;
+}
+
+h3 {
+    color:#C00; /* Deep Orange Red */
+    text-shadow:#F63 1px 1px 1px; /* Orange Pink */
+}
+
+nav ul li {
+    list-style:none;
+    font-weight:bold;
+    line-height:2.5em;
+    margin-right:2px;
+    padding:5px 4px;
+    background:#000; /* Black */
+    display:inline;
+    border-radius:12px;
+}
+
+nav a:link {
+    color:#F60; /* Duller Orange */
+    text-shadow:#F30 2px 2px 4px; /* Orange */
+    text-decoration:none;
+    padding:5px;
+}
+
+nav a:visited {
+    color:#F93; /* Dull Gold */
+    text-shadow:#F30 3px 2px 4px; /* Orange */
+}
+
+nav a:hover {
+    text-decoration:underline;
+}
+
+main {
+    width:1125px;
+    margin:0 auto;
+    padding:15px 40px;
+    background:#FFF;
+    border:2px solid #900; /* Deep Rust */
+    position:relative;
+    display:block;
+}
+
+figcaption {
+    font-size:.75em;
+    line-height:2.7em;
+    color:#600; /* Medium Maroon */
+    word-wrap:break-word;
+    text-align:center;
+    font-weight:bold;
+}
+
+address a:link {
+    color:#003; /* Navy Blue */
+    text-shadow:#006 1px 1px 1px; /* Dark Blue */
+    text-decoration:none;
+    padding:5px;
+}
+
+address a:visited {
+    color:#999; /* Medium Gray */
+    text-shadow:#666 3px 2px 4px; /* Darker Gray */
+}
+
+address a:hover {
+    text-decoration:underline;
+}
+
+/* ID Selectors */
+#HeaderMain{
+    margin:0 auto;
+    padding:15px 15px 0;
+    background:#F00; /* Bright Orange Red */
+}
+
+#ArticleStatueOfLiberty, #ArticleMontaukPointLight, #ArticleMountRushmore, #ArticleSavannahHistoricDistrict {
+    width:400px;
+    padding:15px 15px;
+    font:bold 1.01em/1.2em Calibri, Garamond, sans-serif;
+    color:#000; /* Black */
+    border:3px solid #900; /* Dark Rust */
+    box-shadow:1px 1px 3px #F30; /* Orange */
+    border-radius:40px;
+}
+
+#ArticleStatueOfLiberty {
+    background:#ff8c00; /* Dark Orange - W3C Colors */
+}
+
+#ArticleMontaukPointLight {
+    background:#F93; /* Dull Gold */
+}
+
+#ArticleMountRushmore {
+    background:#ff7e00; /* Amber - Color Index */
+}
+
+#ArticleSavannahHistoricDistrict {
+    background:#ffa500; /* Orange (Web) - W3C */
+}
+
+#BottomInfoAndFooter {
+    color:#000; /* Black */
+    font-weight:bold;
+    margin:0 auto;
+    padding:15px;
+    text-align:center;
+    background:#F00; /* Bright Orange Red */
+}
+
+/* Class Selectors */
+.ImageLeftFloatAndMargin {
+    float:left;
+    margin:10px 30px 10px 0;
+}
+
+.ImageRightFloatAndMargin {
+    float:right;
+    margin:10px 0 10px 30px;
+}
+
+.ImageBorder {
+    border:2px solid #000; /* Black */
+    border-radius:12px;
+    box-shadow:3px 3px 5px #666; /* Darker Gray */
+}
+
+.FigureLeftFloatAndMargin {
+    float:left;
+    margin:0 20px 0 0;
+}
+
+.FigureRightFloatAndMargin {
+    float:right;
+    margin:0 0 0 20px;
+}
+
+.FigureBorder {
+    border:2px solid #336; /* Deep Slate Color */
+    border-radius:12px;
+    box-shadow:3px 3px 5px #999; /* Medium Gray */
+}
+
+.Aside {
+    width:450px;
+    font:bold italic 90%/1.4em Tahoma, Arial, sans-serif;
+    color:#E32636; /* Alizarin Crimson - Color Index */
+}
+
+.AsideLeftFloatAndMargin {
+    float:left;
+    margin:0 20px 0 0;
+}
+
+.AsideRightFloatAndMargin {
+    float:right;
+    margin:0 0 0 20px;
+}
+
+.ReadMore a:link {
+    color:#C00; /* Deep Orange Red */
+    font-weight:bold;
+    text-shadow:#F63 1px 1px 1px; /* Orange Pink */
+    text-decoration:none;
+}
+
+.ReadMore a:visited {
+    color:#F00; /* Bright Orange Red */
+    font-weight:bold;
+    text-shadow:#600 1px 1px 1px; /* Medium Maroon */
+}
+
+.ReadMore a:hover {
+    text-decoration:underline;
+}
+
+/* Styling for first word in each paragraph except the first paragraph of each section. */
+.FirstWord {
+    font-family: Georgia, Calisto, serif;
+    font-size: 110%;
+    font-weight:bolder;
+}
+
+/* Styling for first words in first paragraph of each section. */
+.FirstWords {
+    color:#000; /* Black */
+    text-shadow:#930 1px 1px 1px; /* Brown */
+    font-family: Georgia, Calisto, serif;
+    font-size: 115%;
+    font-weight:bolder;
+}
+
+/* Text color and styling for <strong> tag. */
+.Important {
+    color:#00F; /* Royal Blue */
+    font-style:italic;
+}
+
+.BottomInfoAndFooterFont {
+    font-size:.86em;
+}
+
+.Clear {
+    clear:both;
+}
+

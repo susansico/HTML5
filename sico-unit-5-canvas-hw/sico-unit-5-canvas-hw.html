@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link href="sico-unit-5-canvas-hw.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="dist/html5shiv.js"></script>
+    <![endif]-->
+    <script src="sico-unit-5-canvas-hw.js"></script>
+    <title>HTML5 Canvas</title>
+</head>
+
+<!-- This Canvas Drawing web page has a header, horizontal navigation and 6 canvases each in a div element - Circles, Triangles, Rectangles, Images, Radial Gradient, and Bouncing Ball Animation. It also covers lines, text, linear gradient, and an attempt at animated text. Each div section has a script. The functions called in the script are in sico-unit-5-canvas-hw.js. -->
+<body>
+
+    <header role="banner">
+
+        <h1>Canvas Drawings</h1>
+
+        <!-- Horizontal Page Navigation -->
+        <nav role="navigation">
+            <ul>
+                <li><a href="sico-unit-5-canvas-hw.html">Home </a></li>
+                <li><a href="#Circles"><span style="white-space: nowrap">Circles</span></a></li>
+                <li><a href="#Rectangles"><span style="white-space: nowrap">Rectangles</span></a></li>
+                <li><a href="#Triangles"><span style="white-space: nowrap">Triangles</span></a></li>
+                <li><a href="#Images"><span style="white-space: nowrap">Images</span></a></li>
+                <li><a href="#Animation"><span style="white-space: nowrap">Animation</span></a></li>
+                <li><a href="#RadialGradient"><span style="white-space: nowrap">Radial Gradient</span></a></li>
+                <li><a href="#About">About</a></li>
+                <li><a href="#Contact">Contact</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <a id="Circles"></a>
+
+        <!-- The Circle Canvas contains 12 circles of various sizes, coordinates, and colors and a text title.  -->
+        <div id="CircleContainer">
+
+            <h2>Circles</h2>
+
+            <canvas id="CircleCanvas" width="900" height="500"></canvas>
+
+            <script>
+
+                /* Canvas Set0up */
+                var ctx = GetCanvasAndContext("CircleCanvas");
+                FillCanvas(ctx, "#C96", 0, 0, 900, 500); /* Taupe*/
+
+                /* Draw Circles */
+                DrawCircle(ctx, "#C00", 300, 100, 50, 0, Math.PI*2, false); /* Rust */
+                ctx.beginPath();
+                DrawCircle(ctx, "#F33", 450, 150, 25, 0, Math.PI*2, false); /* Deeper Shade of Pink */
+                ctx.beginPath();
+                DrawCircle(ctx, "#F66", 700, 75, 35, 0, Math.PI*2, false); /* Shade of Pink */
+                ctx.beginPath();
+                DrawCircle(ctx, "#900", 800, 450, 15, 0, Math.PI*2, true); /* Medium Rust */
+                ctx.beginPath();
+                DrawCircle(ctx, "#ff6347", 620, 365, 60, 0, Math.PI*2, true); /* Tomato */
+                ctx.beginPath();
+                DrawCircle(ctx, "#600", 820, 250, 30, 0, Math.PI*2, true); /* Dark Rust */
+                ctx.beginPath();
+                DrawCircle(ctx, "#ff7f50", 400, 235, 20, 0, Math.PI*2, true); /* Coral */
+                ctx.beginPath();
+                DrawCircle(ctx, "#8b0000", 200, 355, 100, 0, Math.PI*2, true); /* Dark Red */
+                ctx.beginPath();
+                DrawCircle(ctx, "#F93", 575, 50, 40, 0, Math.PI*2, true); /* Melon */
+                ctx.beginPath();
+                DrawCircle(ctx, "#F60", 70, 70, 45, 0, Math.PI*2, true); /* Orange */
+                ctx.beginPath();
+                DrawCircle(ctx, "#F30", 400, 425, 55, 0, Math.PI*2, true); /* Light Orange */
+                ctx.beginPath();
+                DrawCircle(ctx, "#F00", 40, 475, 10, 0, Math.PI*2, true); /* Red-Orange */
+
+                /* Draw Text */
+                DrawText(ctx, "#C00", "1", "bold 60px Calibri", "left", "Random", 100, 215, true); /* Rust */
+                DrawText(ctx, "#C00", "1", "bold 60px Calibri", "left", "Circles", 535, 270, true);
+
+            </script>
+
+        </div>
+
+        <a id="Triangles"></a>
+
+        <!-- The Triangle Canvas contains 2 triangles in the shape of an ice cream cone, one triangle that is a pointer to the ice cream cone with text on the alternate side, and a circle that is a cherry on top of the ice cream cone.  -->
+        <div id="TriangleContainer">
+
+            <h2>Triangles</h2>
+
+            <canvas id="TriangleCanvas" width="900" height="500"></canvas>
+
+            <script>
+
+                /* Canvas Set-up */
+                var ctx = GetCanvasAndContext("TriangleCanvas");
+                FillCanvas(ctx, "#deb887", 0, 0, 900, 500); /* Burlywood */
+
+                /* Draw Cherry Ice Cream */
+                DrawTriangle(ctx, "#F99", "4", "#F06", "round", 250, 25, 100, 200, 400, 200);
+
+                /* Draw Ice Cream Cone in Shade of Yellow with Sandy Brown Outline */
+                ctx.beginPath();
+                DrawTriangle(ctx, "#f4a460", "4", "#FC6", "round", 250, 485, 100, 200, 400, 200);
+
+                /* Draw Cherry on Top in a Cherry Color */
+                ctx.beginPath();
+                DrawCircle(ctx, "#C03", 250, 30, 20, 0, Math.PI*2, false);
+
+                /* Draw Pointer to Ice Cream Cone in shades of Pink */
+                ctx.beginPath();
+                DrawTriangle(ctx, "#F36", "2", "#F99", "round", 450, 200, 465, 185, 465, 215);
+
+                /* Draw Cherry Ice Cream in a Cone with a Cherry on Top! as Four Lines */
+                DrawText(ctx, "#C03", "1", "italic bold 53px Calisto", "left", "Cherry Ice Cream", 475, 128, true);
+                DrawText(ctx, "#C03", "1", "italic bold 53px Calisto", "left", "in a Cone", 565, 193, true);
+                DrawText(ctx, "#C03", "1", "italic bold 53px Calisto", "left", "with a Cherry", 515, 258, true);
+                DrawText(ctx, "#C03", "1", "italic bold 53px Calisto", "left", "on Top!", 585, 323, true);
+
+            </script>
+
+        </div>
+
+        <a id="Rectangles"></a>
+
+        <!-- This Rectangle Canvas contains three rectangles that contain a picture of a daisy, text, and a gradient. -->
+        <div id="RectangleContainer">
+
+            <h2>Rectangles</h2>
+
+            <canvas id="RectangleCanvas" width="900" height="500"></canvas>
+
+            <script>
+
+                /* Canvas Set-up */
+                var ctx = GetCanvasAndContext("RectangleCanvas");
+                FillCanvas(ctx, "#C96", 0, 0, 900, 500);
+
+                /* Draw Left Rectangle in Shades of Pink with Picture of Pink Daisy Outline in Lines of Pink */
+                DrawRectangle(ctx, "#F06", "7", "#F99", 100, 30, 300, 200);
+                DrawPicture(ctx, "daisy.jpg", 175, 65, 1);
+                DrawLine(ctx, "#F09", "10", 175, 65, 319, 65, "round");
+                DrawLine(ctx, "#F09", "10", 319, 65, 319, 191, "round");
+                DrawLine(ctx, "#F09", "10", 319, 191, 175, 191, "round");
+                DrawLine(ctx, "#F09", "10", 175, 191, 175, 65, "round");
+
+                /* Draw Right Rectangle in Black with Pink Outline and three lines of Pink Text */
+                DrawRectangle(ctx, "#C03", "3", "black", 500, 30, 300, 200);
+                DrawText(ctx, "#F06", "1", "italic bold 29px Georgia", "center", "here's a daisy", 650, 135, true);
+                DrawText(ctx, "#F06", "1", "italic bold 27px Georgia", "right", "flowers", 625, 80, true);
+                DrawText(ctx, "#F06", "1", "italic bold 25px Georgia", "left", "pinks", 715, 185, true);
+
+                /* Draw Linear Gradient in Shades of Pink in Middle Rectangle */
+                DrawRectangle(ctx, "black", "3", "#FFF", 315, 280, 300, 200);
+                //ctx, xStart, yStart, xEnd, yEnd, offset, color, x, y, width, height
+                var color = ["#F06", "#F99", "#F36"];
+                var offset = [0, 0.4, 1];
+                DrawLinearGradient(ctx, 315, 280, 615, 280, offset, color, 315, 280, 300, 200);
+
+            </script>
+
+        </div>
+
+        <a id="Images"></a>
+
+        <!-- This Image Canvas contains four pictures of favorite things on black rectangles - Full Belly Farm Sunflowers, Mayfield Cafe, McEvoy Ranch Olive Oil, and Red Tulips with a caption in text under each picture and a Canvas title on the lower right side of the Canvas. */-->
+        <div id="ImageContainer">
+
+            <h2>Images</h2>
+
+            <canvas id="ImageCanvas" width="900" height="500"></canvas>
+
+            <script>
+
+                /* Canvas Set-up */
+                var ctx = GetCanvasAndContext("ImageCanvas");
+                FillCanvas(ctx, "#deb887", 0, 0, 900, 500); /* Burlywood */
+
+                /* Draw Black Rectangle with Full Belly Farm Sunflower Picture in Center and Text Underneath Picture */
+                DrawRectangle(ctx, "black", "1", "black", 80, 45, 167, 184);
+                DrawPicture(ctx, "full-belly-farm-sunflowers.jpg", 90, 55, 1);
+                DrawText(ctx, "#C00", "1", "bold 13px Arial", "left", "Full Belly Farm Sunflowers", 80, 244, true); /* Rust */
+
+                /* Draw Black Rectangle with Mayfield Cafe Picture in Center and Text Underneath Picture */
+                DrawRectangle(ctx, "black", "1", "black", 656, 45, 167, 230);
+                DrawPicture(ctx, "mayfield-cafe.jpg", 666, 55, 1);
+                DrawText(ctx, "#C00", "1", "bold 13px Arial", "left", "Mayfield Cafe", 696, 290, true);
+
+                /* Draw Black Rectangle with McEvoy Ranch Olive Oil Picture in Center and Text Underneath Picture */
+                DrawRectangle(ctx, "black", "1", "black", 80, 281, 167, 184);
+                DrawPicture(ctx, "mcevoy-ranch-olive-oil-spout.jpg", 90, 291, 1);
+                DrawText(ctx, "#C00", "1", "bold 13px Arial", "left", "McEvoy Ranch Olive Oil", 86, 479, true);
+
+                /* Draw Black Rectangle with Red Tulips Picture in Center and Text Underneath Picture */
+                DrawRectangle(ctx, "black", "1", "black", 305, 153, 281, 189);
+                DrawPicture(ctx, "red-tulips.jpg", 308, 156, 1);
+                DrawText(ctx, "#C00", "1", "bold 13px Arial", "left", "Tulips", 415, 356, true);
+
+                /* Draw Canvas Title - Favorite Things */
+                DrawText(ctx, "#C00", "1", "italic bold 60px Calisto", "left", "Favorite", 636, 371, true);
+                DrawText(ctx, "#C00", "1", "italic old 60px Calisto", "left", "Things", 636, 431, true);
+
+            </script>
+
+        </div>
+
+        <a id="RadialGradient"></a>
+
+        <!-- This Canvas contains a Radian Gradient in Red, Orange-Red, and Deep Shade of Yellow-->
+        <div id="RadialGradientContainer">
+
+            <h2>Radial Gradient</h2>
+
+            <canvas id="RadialGradientCanvas" width="900" height="500"></canvas>
+
+            <script>
+
+                /* Canvas Set-up */
+                var ctx = GetCanvasAndContext("RadialGradientCanvas");
+                FillCanvas(ctx, "#C96", 0, 0, 900, 500); /* Tan */
+
+                /* Set Color and Offset Arrays and Draw Radial Gradient */
+                var color = ["red", "#ff4500", "#F90"]; /* Red, Orange-Red, and Deep Shade of Yellow */
+                var offset = [0, 0.7, 1];
+                DrawRadialGradient(ctx, 450, 250, 90, 450, 250, 250, offset, color, 0, 0, 900, 500);
+
+            </script>
+
+        </div>
+
+        <a id="Animation"></a>
+
+        <!-- This Bouncing Ball Animation Black Canvas contains three bouncing balls and a bouncing asterisk text character which was first an attempt at bouncing text animation that bounced past the boundaries probably due to the length of the text. Research was done and different things tries but more research is needed.  -->
+        <div id="AnimationContainer">
+
+            <h2>Bouncing Ball Animation</h2>
+
+            <canvas id="AnimationCanvas" width="900" height="500"></canvas>
+
+            <script>
+
+                var ctx = GetCanvasAndContext("AnimationCanvas");
+
+                /* x and y variables determine the position of the ball. */
+                var x = 250; /* Red Ball */
+                var y = 250;
+                var x2 = 150; /* Yellow Ball */
+                var y2 = 150;
+                var x3 = 200; /* Orange Ball */
+                var y3 = 200;
+                var xt = 100; /* Green Asterisk */
+                var yt = 100;
+
+                /* xChange variable determines horizontally and yChange determines vertically how far the ball moves during a redraw and which direction. */
+                var xChange = 3; /* Red Ball */
+                var yChange = 2;
+                var x2Change = -3; /* Yellow Ball */
+                var y2Change = -2;
+                var x3Change = -3; /* Orange Ball */
+                var y3Change = 2;
+                var xtChange = 4; /* Green Asterisk */
+                var ytChange = 3;
+
+                /* width and height determine the dimensions of the canvas. Set the text. */
+                var width = 900;
+                var height = 500;
+                var text = "*";
+
+                function DrawBouncingBallAnimation() {
+
+                    FillCanvas(ctx, "black", 0, 0, 900, 500);
+
+                    /* Red Ball */
+                    ctx.fillStyle = "red";
+                    ctx.beginPath();
+                    ctx.arc(x, y, 20, 0, Math.PI*2, true); /* Create ball. */
+                    ctx.fill();
+
+                    /* Yellow Ball */
+                    ctx.fillStyle = "Yellow";
+                    ctx.beginPath();
+                    ctx.arc(x2, y2, 20, 0, Math.PI*2, true); /* Create ball. */
+                    ctx.fill();
+
+                    /* Orange Ball */
+                    ctx.fillStyle = "Orange";
+                    ctx.beginPath();
+                    ctx.arc(x3, y3, 20, 0, Math.PI*2, true); /* Create ball. */
+                    ctx.fill();
+
+                    DrawText(ctx, "#0F6", "1", "bold 70px Calibri", "center", text, xt, yt, true);
+
+                    /* Checks the ball or text position from left/right edges and executes if condition is true, change switched from positive number to negative number to reverse direction of ball. */
+
+                    /* Red Ball */
+                    if (x >= width || x <= 0) {
+
+                        xChange = -xChange
+
+                    }
+                    x = x + xChange; /* Updates horizontal position of ball. */
+
+                    /* Yellow Ball */
+                    if (x2 >= width || x2 <= 0) {
+
+                        x2Change = -x2Change
+
+                    }
+                    x2 = x2 + x2Change; /* Updates horizontal position of ball. */
+
+                    /* Orange Ball */
+                    if (x3 >= width || x3 <= 0) {
+
+                        x3Change = -x3Change
+
+                    }
+                    x3 = x3 + x3Change; /* Updates horizontal position of ball. */
+
+                    /* Green Asterisk */
+                    if (xt >= width || xt <= 0) {
+
+                        xtChange = -xtChange
+
+                    }
+                    xt = xt + xtChange; /* Updates horizontal position of ball. */
+
+                    /* Checks the ball or text position from top/bottom edges and executes if condition is true, yChange switched from positive number to negative number to reverse direction of ball. */
+
+                    /* Red Ball */
+                    if (y >= height || y <= 0) {
+
+                        yChange = -yChange;
+
+                    }
+                    y = y + yChange;
+
+                    /* Yellow Ball */
+                    if (y2 >= height || y2 <= 0) {
+
+                        y2Change = -y2Change;
+
+                    }
+                    y2 = y2 + y2Change;
+
+                    /* Orange Ball */
+                    if (y3 >= height || y3 <= 0) {
+
+                        y3Change = -y3Change;
+
+                    }
+                    y3 = y3 + y3Change;
+
+                    /* Green Asterisk */
+                    if (yt >= height || yt-35 <= 0) { /* -35 stopped asterisk from going past top boundary. */
+
+                        ytChange = -ytChange;
+
+                    }
+                    yt = yt + ytChange;
+
+                }
+
+                /* Setting an interval causes the function to repeat with time in milliseconds; adjusting this number changes the speed of the animation. */
+                setInterval(DrawBouncingBallAnimation, 10);
+
+            </script>
+
+        </div>
+
+    </main>
+
+    <!-- Information and Footer at bottom of page. -->
+    <div id="BottomInfoAndFooter">
+
+        <a id="About"></a>
+
+        <span class="BottomInfoAndFooterFont">&#8216;Canvas Drawings&#8217; created by Susan Sico.</span>
+
+        <a id="Contact"></a>
+
+        <footer role="contentinfo">
+            <address class="BottomInfoAndFooterFont">Contact&#58; <a href="mailto:susan.sico@gmail.com">Susan Sico</a></address>
+            <span id="CopyrightFont">Copyright 2014, Susan Sico. All rights reserved.</span>
+        </footer>
+
+    </div>
+
+</body>
+</html>

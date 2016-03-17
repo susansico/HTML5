@@ -1,0 +1,117 @@
+/* HTML5 Canvas: sico-unit-5-canvas-hw.css */
+
+/* Tag Selectors */
+body {
+    font:84%/1.5em Verdana, Arial, sans-serif;
+    color:#300; /* Very Dark Brown */
+    margin:0 auto;
+    padding:0;
+    background:#000; /* Black */
+}
+
+header {
+    width:1000px;
+    margin:0 auto;
+    background:#900; /* Medium Rust */
+    border:1px solid #300; /* Very Dark Brown */
+    display:block;
+}
+
+header h1 {
+    margin-bottom:0;
+    font:bold 3.5em Calisto, Georgia, serif;
+    color:#F60; /* Light Orange */
+    text-shadow:#C00 2px 2px 3px; /* Rust */
+    opacity: 0.9;
+    text-align:center;
+}
+
+/* Navigation */
+nav {
+    width:1000px;
+    margin:20px 0 0 0;
+    padding-bottom:1px;
+    background:#900; /* Rust */
+}
+
+nav ul {
+    margin:0;
+    padding-right:30px;
+    text-align:center;
+}
+
+nav ul li {
+    font-size:115%;
+    font-weight:bold;
+    line-height:2.5em;
+    padding:0 5px 0;
+    list-style:none;
+    display:inline;
+}
+
+nav a:link, footer a:link {
+    color:#F60; /* Light Orange */
+    font-weight:bold;
+    text-decoration:none;
+}
+
+/* Navigation and footer links styling. */
+nav a:visited, footer a:visited {
+    color:#F30; /* Orange */
+    text-shadow:#930 3px 2px 4px; /* Chestnut Brown */
+}
+
+nav a:hover, footer a:hover {
+    text-decoration:underline;
+}
+
+main {
+    width:1000px;
+    margin:0 auto;
+    background:#963; /*  Dark Tan */
+    border:1px solid #630; /* Dark Brown */
+    position:relative;
+    display:block;
+}
+
+h2 {
+    font:bold Calisto, Georgia, serif;
+    color:#F60; /* Light Orange */
+    text-shadow:#C00 2px 2px 2px; /* Bright Rust */
+    font-size:1.9em;
+}
+
+/* ID Selectors */
+#RectangleContainer, #TriangleContainer, #CircleContainer, #ImageContainer, #AnimationContainer, #RadialGradientContainer {
+    width:900px;
+    margin:0 auto;
+    padding-bottom:20px;
+}
+
+#AnimationContainer {
+    padding-bottom:40px; /* Page Bottom Padding */
+}
+
+#RectangleCanvas, #TriangleCanvas, #CircleCanvas, #ImageCanvas, #AnimationCanvas, #RadialGradientCanvas {
+    border:2px solid #300; /* Very Dark Brown */
+    box-shadow:-1px -1px 1px #633, 1px 1px 1px #633; /* Dark Mocha */
+}
+
+#BottomInfoAndFooter {
+    width:1000px;
+    color:#F60; /* Light Orange */
+    font-weight:bold;
+    margin:0 auto;
+    padding:20px 0;
+    text-align:center;
+    background:#900; /* Medium Rust */
+    border:1px solid #300; /* Very Dark Brown */
+}
+#CopyrightFont {
+    font-size:.75em;
+}
+
+/* Class Selectors */
+.BottomInfoAndFooterFont {
+    font-size:.85em;
+}

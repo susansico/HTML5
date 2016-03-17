@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link href="sico-unit-4-video-and-audio-hw.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="dist/html5shiv.js"></script>
+    <![endif]-->
+    <title>HTML5 Video and Audio</title>
+</head>
+
+<!-- This is a news web page with a three column layout demonstrating the HTML5 video and audio elements.  There are three news videos and three news audios.  For each video, there is a mp4 file, ogv file, and webm file.  For each audio, there is a mp3 file, ogg file, and opus file.  All video and audio tags contain the controls attribute and the preload attribute set to auto.  The first video also contains the poster attribute.  The last audio tag contains an id for buttons which are implemented with the button element, javascript, and css styling.  The first video also includes a .flv file and the object element but the object element has been commented out due to the fact that a .flv player could not be found that did not have a virus.  More research will be done at a later time.  The width of the audio player was set at 300px so that the Microsoft player would be the same size as the Firefox and Chrome players and fit in the column.  The About and Contact links in the navigation go to the footer which cites the author of the page and an email address.  The navigation links also include links to the news sources' web sites. Each video and audio news item has a heading above the audio and video player containing the news source and the news item title, date, and description below the audio or video player. -->
+<body>
+
+    <header id="HeaderMain" role="banner">
+
+        <div id="HeaderMainTitleDescriptionPadding">
+            <h1>The Current News Network</h1>
+            <span id="HeaderMainTitleDescription">Bringing the latest news from diverse independent news sources</span>
+        </div>
+
+        <!--Horizontal Page Navigation -->
+        <nav role="navigation">
+
+            <ul>
+                <li><a href="sico-unit-4-video-and-audio-hw.html">Home</a></li>
+                <li><a href="http://www.democracynow.org/"><span style="white-space: nowrap">Democracy Now&#33;</span></a></li>
+                <li><a href="http://therealnews.com/t2/"><span style="white-space: nowrap">Real News Network</span></a></li>
+                <li><a href="http://www.blackagendareport.com/"><span style="white-space: nowrap">Black Agenda Report</span></a></li>
+                <li><a href="http://www.truthdig.com/"><span style="white-space: nowrap">Truthdig Radio</span></a></li>
+                <li><a href="http://lawanddisorder.org/"><span style="white-space: nowrap">Law and Disorder</span></a></li>
+                <li><a href="#About">About</a></li>
+                <li><a href="#Contact">Contact</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <main>
+
+        <!-- Left News Column -->
+        <div id="NewsColumnLeft">
+
+            <!-- Democracy Now! Ferguson -->
+            <div class="NewsItemsBorder">
+
+                <div class="NewsItemsHeader"><h2>Democracy Now&#33;</h2></div>
+
+                <video width="329" height="240" controls preload="auto" poster="amy-and-juan-video-poster.jpg">
+                    <source src="dn2014-0820.mp4" type="video/mp4">
+                    <source src="dn2014-0820.oggtheora.ogv" type="video/ogg">
+                    <source src="dn2014-0820.webmhd.webm" type="video/webm">
+
+                    <!-- Flash for older browsers. -->
+                    <!--<object width="329" height="240" type="application/x-shockwave-flash" data="fallback.swf">
+                    <param name="movie" value="fallback.swf" />
+                    <param name="flashvars" value="autostart=true&file=dn2014-0820.flv"></object>-->
+                </video>
+
+                <div class="NewsItemsTitleAndDescription">
+
+                    <h3>Ferguson</h3>
+
+                    <time datetime="2014-08-20">August 20, 2014</time>
+
+                    <p>Rubber Bullets, TearGas and Jail&#58; Ferguson Police Crack Down on Journalists Covering Protests&#59;
+                     &#8220;Not Acceptable in a Civilized Society&#8221;&#58; Pastor on Ferguson Police Targeting Traumatized Youth&#59; &#8220;They are All Michael Brown&#8221;&#58; State Senator Defends Protesters Seeking Justice in Police Shooting&#59; Stop the Violence from Ferguson to Gaza&#58; 90&#45;Year&#45;Old Holocaust Survivor Arrested in St. Louis</p>
+
+                </div>
+
+            </div>
+
+            <!-- Black Agenda Report Ferguson Unmasks the War on Black America -->
+            <div class="NewsItemsBorder NewsItemsNotFirstRowTopMargin">
+
+                <div class="NewsItemsHeader"><h2>Black Agenda Report</h2></div>
+
+                <audio controls preload="auto">
+                    <source src="20140820_gf_MilitaryCops.mp3" type="audio/mp3">
+                    <source src="20140820_gf_MilitaryCops.oggvorbis.ogg" type="audio/ogg">
+                    <source src="20140820_gf_MilitaryCops.opus" type="audio/opus">
+                Your browser does not support the audio element.
+                </audio>
+
+                <div class="NewsItemsTitleAndDescription">
+
+                    <h3>Ferguson Unmasks the War on Black America</h3>
+
+                    <time datetime="2014-08-26">August 26, 2014</time>
+
+                    <p>A Black Agenda Radio commentary by executive editor Glen Ford, &#8220;The military character and mission of the police is more clear today than when the Black Panther Party and others sounded the alarm in the Sixties&#8221;.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Right News Column has to be second in html file in order for columns to work properly. -->
+        <div id="NewsColumnRight">
+
+            <!-- Democracy Now! Dr. Paul Farmer on African Ebola Outbreak -->
+            <div class="NewsItemsBorder">
+
+                <div class="NewsItemsHeader"><h2>Democracy Now&#33;</h2></div>
+
+                <video width="330" height="240" controls preload="auto">
+                    <source src="dn2014-0822.mp4" type="video/mp4">
+                    <source src="dn2014-0822.oggtheora.ogv" type="video/ogg">
+                    <source src="dn2014-0822.webmhd.webm" type="video/webm">
+                </video>
+
+                <div class="NewsItemsTitleAndDescription">
+
+                    <h3>Dr. Paul Farmer on African Ebola Outbreak&#58; Growing Inequality in Global Healthcare at Root of
+                    Crisis</h3>
+
+                    <time datetime="2014-08-22">August 22, 2014</time>
+
+                    <p>As the death toll from the West African Ebola outbreak nears 1,400, two American missionaries who received experimental drugs and top&#45;notch healthcare have been released from the hospital.  Amy Goodman and Juan Gonzalez spend the hour with Partners in Health co-founder Dr. Paul Farmer discussing what can be done to stop the epidemic.</p>
+
+                </div>
+
+            </div>
+
+            <!-- Law and Disorder Gaza: Israel's War Crimes and International Peace Movement -->
+            <div class="NewsItemsBorder NewsItemsNotFirstRowTopMargin">
+
+                <div class="NewsItemsHeader"><h2>Law and Disorder</h2></div>
+
+                <audio controls preload="auto">
+                    <source src="lawanddisorder20140818.mp3" type="audio/mp3">
+                    <source src="lawanddisorder20140818.oggvorbis.ogg" type="audio/ogg">
+                    <source src="lawanddisorder20140818.opus" type="audio/opus">
+                    Your browser does not support the audio element.
+                </audio>
+
+                <div class="NewsItemsTitleAndDescription">
+
+                    <h3>Gaza&#58; Israel&#39;s War Crimes and International Peace Movement</h3>
+
+                    <time datetime="2014-08-18">August 18, 2014</time>
+
+                    <p>Attorney Maria LaHood on the growing evidence that Israel&#39;s leaders and commanders have committed war crimes, genocide, and crimes against humanity against the Palestinians as defined by the International Criminal Court&#59; Donna Nevel on the growing movement among Americans and Jewish Americans who are organizing for justice in Palestine.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Center News Column -->
+        <div id="NewsColumnCenter">
+
+            <!-- Real News Network The Powers Behind the Islamic State -->
+            <div class="NewsItemsBorder">
+
+                <div class="NewsItemsHeader"><h2>Real News Network</h2></div>
+
+                <video width="329" height="240" controls preload="auto">
+                    <source src="nahmed0822isis_high.mp4" type="video/mp4">
+                    <source src="nahmed0822isis_high.oggtheora.ogv" type="video/ogg">
+                    <source src="dn2014-0822.webmhd.webm" type="video/webm">
+                </video>
+
+                <div class="NewsItemsTitleAndDescription">
+
+                    <h3>The Powers Behind the Islamic State</h3>
+
+                    <time datetime="2014-08-22">August 22, 2014</time>
+
+                    <p>Investigative journalist Nafeez Ahmed gives specific examples of how Saudi, Qatari, and American interests
+                    have supported the group formerly known as ISIS, and what the global community can do now to reign them in.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- TruthDig Patrick Cockburn: Islamic State Uses 'Snuff Films' to Promote Atrocities -->
+            <div class="NewsItemsBorder NewsItemsNotFirstRowTopMargin">
+
+                <div class="NewsItemsHeader"><h2>Truthdig Radio</h2></div>
+
+                <!-- Original udio and source for browser player. -->
+                <!-- <audio controls preload="auto">
+                     <source src="truth_dig_082114.mp3" type="audio/mp3">
+                     <source src="truth_dig_082114.oggvorbis.ogg" type="audio/ogg">
+                     <source src="truth_dig_082114.opus" type="audio/opus">
+                     Your browser does not support the audio element.
+                 </audio>-->
+
+                <!-- Audio Controls Buttons with id, buttons, and JavaScript. */-->
+                <audio id="TruthdigJSControls" preload="auto">
+                    <source src="truth_dig_082114.mp3" type="audio/mp3">
+                    <source src="truth_dig_082114.oggvorbis.ogg" type="audio/ogg">
+                    <source src="truth_dig_082114.opus" type="audio/opus">
+                    Your browser does not support the audio element.
+                </audio>
+
+                <div>
+                    <button onclick="document.getElementById('TruthdigJSControls').play();">Play</button>
+                    <button onclick="document.getElementById('TruthdigJSControls').pause();">Pause</button>
+                    <button onclick="document.getElementById('TruthdigJSControls').volume+=0.1;">Volume &#43;</button>
+                    <button onclick="document.getElementById('TruthdigJSControls').volume-=0.1;">Volume &#8211;</button>
+                </div>
+
+                <script>
+
+                </script>
+
+                <div class="NewsItemsTitleAndDescription">
+
+                    <h3>Patrick Cockburn&#58; Islamic State Uses &#8216;Snuff Films&#8217; to Promote Atrocities</h3>
+
+                    <time datetime="2014-08-21">August 21, 2014</time>
+
+                    <p>Ths week on Truthdig Radio in association with KPFK&#58; Patrick Cockburn on James Foley murder and the rise of the Islamic State, Dennis Kucinich on the militarization of the police, and Joshua Rofe on the 2,500 teen lifers in prison.</p>
+
+                </div>
+
+            </div>
+
+            <!-- This ensures that more content in the columns will not run over the footer. -->
+            <div class="BrClear"></div>
+
+        </div>
+
+    </main>
+
+    <!-- Information and Footer at bottom of page. -->
+    <div id="BottomInfoAndFooter">
+
+        <a id="About"></a>
+
+        <span class="BottomInfoAndFooterFont">&#8216;Current News Network&#8217; created by Susan Sico.</span>
+
+        <a id="Contact"></a>
+
+        <footer role="contentinfo">
+            <address class="BottomInfoAndFooterFont">Contact&#58; <a href="mailto:susan.sico@gmail.com">Susan Sico</a></address>
+            <span id="CopyrightFont">Copyright 2014, Susan Sico. All rights reserved.</span>
+        </footer>
+
+    </div>
+
+
+</body>
+</html>

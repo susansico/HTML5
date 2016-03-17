@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link href="sico-unit-7-geolocation-api-hw.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="dist/html5shiv.js"></script>
+    <![endif]-->
+    <!-- Google Maps Javascript API -->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script src="sico-unit-7-geolocation-api-hw.js"></script>
+    <title>HTML5 Geolocation API</title>
+</head>
+
+<!-- This html page works in conjunction with sico-unit-7-geolocation-api-hw.js to display the Geolocation API the user's current location and distance from a destination location. -->
+<body>
+
+    <header role="banner">
+
+        <h1>Geolocation</h1>
+
+        <!-- Horizontal Page Navigation -->
+        <nav role="navigation">
+            <ul>
+                <li><a href="sico-unit-7-geolocation-api-hw.html">Home </a></li>
+                <li><a href="#Location"><span style="white-space: nowrap">Location</span></a></li>
+                <li><a href="#Distance"><span style="white-space: nowrap">Distance</span></a></li>
+                <li><a href="#GoogleMap"><span style="white-space: nowrap">Google Map</span></a></li>
+                <li><a href="#About">About</a></li>
+                <li><a href="#Contact">Contact</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <!-- Displays user's latitude and longitude coordinates and accuracy of coordinates. -->
+        <a id="Location"></a>
+
+        <h3>Location</h3>
+
+        <div id="Locations">
+
+
+        </div>
+
+
+        <!-- Displays user's distance from author's Carob Lane, Los Altos location.  -->
+        <a id="Distance"></a>
+
+        <h3>Distance</h3>
+
+        <div id="Distances">
+
+
+        </div>
+
+
+        <!-- Displays Google map of user's location. -->
+        <a id="GoogleMap"></a>
+
+        <h3>Google Map</h3>
+
+        <div id="Map">
+
+
+        </div>
+
+        <form>
+
+            <input type="button" id="Watch" value="Watch Me">
+            <input type="button" id="ClearWatch" value="Clear Watch">
+
+        </form>
+
+    </main>
+
+    <!-- Information and Footer at bottom of page. -->
+    <div id="BottomInfoAndFooter">
+
+        <a id="About"></a>
+
+        <span class="BottomInfoAndFooterFont">&#8216;Geolocation&#8217; created by Susan Sico.</span>
+
+        <a id="Contact"></a>
+
+        <footer role="contentinfo">
+            <address class="BottomInfoAndFooterFont">Contact&#58; <a href="mailto:susan.sico@gmail.com">Susan Sico</a></address>
+            <span id="CopyrightFont">Copyright 2014, Susan Sico. All rights reserved.</span>
+        </footer>
+
+    </div>
+
+</body>
+</html>

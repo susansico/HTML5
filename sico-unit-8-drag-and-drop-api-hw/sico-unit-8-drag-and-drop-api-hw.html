@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link href="sico-unit-8-drag-and-drop-api-hw.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="dist/html5shiv.js"></script>
+    <![endif]-->
+    <!--<script src="sico-unit-5-canvas-hw.js"></script>-->
+    <title>HTML5 Drag and Drop API</title>
+</head>
+
+<!-- This web page demonstrates the HTML5 Drag and Drop API. There are three columns.  The first column has a shopping list where items can selected and moved to the shopping cart which is in the third column.  The shopping list is a permanent list and the items are copied to the cart.  Below the shopping list are shopping boxes in a shopping box container that can moved out of the container into the cart and back again into the container.  The second column has shopping images of which copies can moved into the shopping cart. -->
+<body>
+
+    <header role="banner">
+
+        <h1>Drag And Drop Shopping</h1>
+
+    </header>
+
+    <main>
+
+        <!-- Shopping list and Shopping Boxes section.  The shopping list contains the following items: Tomatoes, Peppers, Zucchini, Mushrooms, and Green Beans. Each item has the draggable attribute set to true and the ondragstart event calling DragStart with the event argument both of which give the item the ability to be moved.  The shopping boxes are in a shopping box container. -->
+        <section id="ShoppingListAndBoxes">
+
+            <h2>Shopping List</h2>
+
+            <ul>
+                 <li id="Tomatoes" draggable="true" ondragstart="return DragStart(event);">Tomatoes</li>
+                 <li id="Peppers" draggable="true" ondragstart="return DragStart(event);">Peppers</li>
+                 <li id="Zucchini" draggable="true" ondragstart="return DragStart(event);">Zucchini</li>
+                 <li id="Mushrooms" draggable="true" ondragstart="return DragStart(event);">Mushrooms</li>
+                 <li id="GreenBeans" draggable="true" ondragstart="return DragStart(event);">Green Beans</li>
+            </ul>
+
+            <h2>Shopping Boxes</h2>
+
+            <!-- Shopping box container holding two boxes that can be moved into the shopping cart and back into the shopping box container.  The boxes have the draggable attribute set to true and the ondragstart event calling DragStart with the event argument.  The Shopping box container has 3 events which allow the boxes to be moved back into the container - ondragenter, ondrop, and ondragover. -->
+            <div id="ShoppingBoxContainer"  ondragenter="return DragEnter(event);" ondrop="return DragDrop(event);" ondragover="return DragOver(event);">
+
+                <div id="ShoppingBoxBig" draggable="true" ondragstart="return DragStart(event);"></div>
+                <div id="ShoppingBoxSmall" draggable="true" ondragstart="return DragStart(event);"></div>
+
+            </div>
+
+        </section>
+
+        <!--  The Shopping Cart has three events which allow list items, boxes, and images to be moved into the cart - ondragenter, ondrop, and ondragover. -->
+        <section id="ShoppingCart" ondragenter="return DragEnter(event);" ondrop="return DragDrop(event);" ondragover="return DragOver(event);">
+
+            <h2>Shopping Cart</h2>
+
+            <div id="Cart">
+
+                <span id="ShoppingCartNote"> (Drag list items, boxes, and images into this cart.)</span>
+
+            </div>
+
+            <div class="BrClear"></div>
+
+        </section>
+
+        <!-- Shopping images can be moved into the shopping cart. -->
+        <section id="ShoppingImages">
+
+            <h2>Shopping Images</h2>
+
+            <img class="Image" src="cauliflower-small.jpg" alt="Cauliflower" style="width:125px; height:101px;"><br>
+            <img class="Image" src="broccoli-smaller.png" alt="Brocoli" style="width:104px; height:122px;"><br>
+            <img class="Image" src="yellow-squash-leaves-smaller.jpg" alt="Yellow Squash" style="width:130px; height:97px;"><br>
+            <img class="Image" src="eggplant-smaller.jpg" alt="Eggplant" style="width:113px; height:113px;"><br>
+            <img class="Image" src="onions-smaller.jpg" alt="Onions" style="width:130px; height:97px;">
+
+        </section>
+
+        <!-- Javascript Code -->
+        <script>
+
+            /* This function is called from the ondragstart event.  It sets up the event object to be moved. */
+            function DragStart(event){
+
+                event.dataTransfer.effectAllowed="move";    /* Allows object to be moved. */
+                event.dataTransfer.setData("Text", event.target.getAttribute('id')); /* Saves object id for use in ondrop event function. */
+
+                var id = event.target.getAttribute('id'); /* Get id. */
+                if (id == "ShoppingBoxBig"){ /* If id is the big shopping box, set drag coordinates to center of box. */
+
+                    event.dataTransfer.setDragImage(event.target, 50, 50);
+
+                }
+                else if (id == "ShoppingBoxSmall"){ /* If id is the small shopping box, set drag coordinates to center of box. */
+
+                    event.dataTransfer.setDragImage(event.target, 25, 25);
+
+                }
+                else event.dataTransfer.setDragImage(event.target, 75, 5); /* If id is list item, set drag coordinates to center of item. */
+
+                return true;
+
+            }
+
+            function DragEnter(event) {
+
+                event.preventDefault(); /* Prevent default browser actions. */
+                return true;
+
+            }
+
+            function DragOver(event) {
+
+                event.preventDefault();  /* Prevent default browser actions. */
+
+            }
+
+            function DragDrop(event) {
+
+                var id;
+
+                id = event.dataTransfer.getData("Text");
+                event.target.appendChild(document.getElementById(id));
+                if (id != "ShoppingBoxBig" && id!= "ShoppingBoxSmall") /* If object is list item, write list item id in cart. */
+                    event.target.innerHTML = id;
+                event.stopPropagation();
+
+                return false;
+
+            }
+
+            /* This JavaScript code allows the images to be moved into the shopping cart. */
+            var cartDrop = document.getElementById("Cart");
+            cartDrop.ondrop = function(event) {
+
+                var id = event.dataTransfer.getData("Text");
+                if (id != "ShoppingBoxBig" && id != "ShoppingBoxSmall") {
+
+                    this.innerHTML += "<p>" + event.dataTransfer.getData("Text") + "</p>"; /* Add images alt attribute to shopping cart. */
+                    event.cancelBubble = true; /* Stops Firefox from displaying images. */
+                    return false;
+
+                }
+
+                return false;
+
+            };
+
+            function CancelEvent() {return false;} /* Cancels browser default actions. */
+            cartDrop.ondragenter = CancelEvent;
+            cartDrop.ondragover = CancelEvent;
+
+            var images = document.getElementsByTagName("img"), i = images.length;
+            while (i--) {
+
+                images[i].ondragstart = function(event) {
+
+                    event = event || window.event;
+                    event.dataTransfer.setData("Text", this.getAttribute("alt")); /* Get images alt attribute. */
+
+                }
+
+            }
+
+        </script>
+
+    </main>
+
+    <!-- Information and Footer at bottom of page. -->
+    <div id="BottomInfoAndFooter">
+
+        <span class="BottomInfoAndFooterFont">&#8216;Drag and Drop Shopping&#8217; created by Susan Sico.</span>
+
+        <footer role="contentinfo">
+            <address class="BottomInfoAndFooterFont">Contact&#58; <a href="mailto:susan.sico@gmail.com">Susan Sico</a></address>
+            <span id="CopyrightFont">Copyright 2014, Susan Sico. All rights reserved.</span>
+        </footer>
+
+    </div>
+
+</body>
+</html>

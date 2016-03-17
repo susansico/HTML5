@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link href="sico-unit-3-form-elements.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="dist/html5shiv.js"></script>
+    <![endif]-->
+
+    <script>
+
+        /* This function tests the Date and Time fields for the correct response format for the Date and Time input types since the pattern attribute is not allowed in Date and Time input types. */
+        function TestPattern(field, testPattern, flag) {
+
+            /* If the Browser is Chrome, do not proceed.  Chrome implemented automated input fields for the Date and Time input types eliminating the need to test for the correct response format.*/
+            if((navigator.userAgent.toLowerCase().indexOf('chrome') > -1) && (navigator.userAgent.toLowerCase().indexOf('safari') > -1) && (navigator.appName == "Netscape"))
+
+                return;
+
+            /* Compare the field's value to the pattern for the correct format. */
+            var validPattern = testPattern.test(field.value);
+
+            /* If the format is valid and the field is a required field, include a red asterisk in the field. Change the field's border color from the focus color to the default border.  If the format is not valid, change the field's border color to red and if the field is a required one, include a red asterisk in the field. */
+            if (validPattern) {
+
+                if (flag)
+                    field.style.background = "#FFF url(red-asterisk.png) no-repeat 98% center";
+
+                field.style.borderColor = "#300";
+                field.style.boxShadow = "1px 1px 3px #600, 1px 1px 3px #900 inset";
+
+            }
+            else {
+
+                if (flag)
+                    field.style.background = "#FFF url(red-asterisk.png) no-repeat 98% center";
+
+                field.style.borderColor = "#C00";
+                field.style.boxShadow = "-2px -2px 10px #C00, 2px 2px 10px #C00";
+
+            }
+        }
+
+    </script>
+
+    <title>HTML5 Form Elements</title>
+</head>
+
+<body>
+
+    <header role="banner"><h1>Practice Form</h1></header>
+
+    <!-- This Practice Form Web Page is designed to show almost all the input types and many of the input type attributes.  The idea is to have people not familiar with online forms get experience filling one out.  Green and Red focus borders are used with all required field except required date and time fields which use Javascript for pattern matching validation and have a permanent red border until the correct format is used.  Fields that are not required us a focus border of blue. -->
+
+    <main>
+
+        <!-- Practice Form -->
+        <form name="PracticeForm" action="http://www.domain.com/form.php" method="post" enctype="multipart/form-data">
+
+            <input type="hidden" name="PracticeForm" value="PracticeForm">
+
+            <!-- Name and Address Section.  This section includes the text, select and zipcode input types.  All fields are required and have placeholders. -->
+            <div class="PracticeSections">
+
+                <span id="RequiredNotification">* Denotes Required Field</span>
+
+                <h2>Name and Address</h2>
+
+                <!-- First Name with autocomplete. -->
+                <label for="FirstName">First Name&#58;</label>
+                <input type="text" class="Required" name="FirstName" id="FirstName" size="30" maxlength="30" autofocus autocomplete="on" placeholder="Harold" required>&nbsp;
+
+                <!-- Last Name -->
+                <label for="LastName">Last Name&#58;</label>
+                <input type="text" class="Required" name="LastName" id="LastName" size="30" maxlength="30" placeholder="Hill" required><br><br>
+
+                <!-- Street Address -->
+                <label for="StreetAddress">Street Address&#58;</label>
+                <input type="text" class="Required" name="StreetAddress" id="StreetAddress" size="70" maxlength="70" placeholder="12 Main Street" required><br><br>
+
+                <!-- City -->
+                <label for="City">City&#58;</label>
+                <input type="text" class="Required" name="City" id="City" size="50" maxlength="50" placeholder="Mason City" required><br><br>
+
+                <!-- State with dropdown selection list.  -->
+                <label for="State">State&#58;</label>
+                <select class="Required" name="State" id="State" required>
+                    <option value="">Select A State</option>
+                    <option value="AZ">Arizona</option>
+                    <option value="CA">California</option>
+                    <option value="CO">Colorado</option>
+                    <option value="ID">Idaho</option>
+                    <option value="ID">Iowa</option>
+                    <option value="KS">Kansas</option>
+                    <option value="MT">Montana</option>
+                    <option value="NE">Nebraska</option>
+                    <option value="NV">Nevada</option>
+                    <option value="NM">New Mexico</option>
+                    <option value="ND">North Dakota</option>
+                    <option value="OK">Oklahoma</option>
+                    <option value="OR">Oregon</option>
+                    <option value="SD">South Dakota</option>
+                    <option value="TX">Texas</option>
+                    <option value="UT">Utah</option>
+                    <option value="WA">Washington</option>
+                    <option value="WY">Wyoming</option>
+                </select><br><br>
+
+                <!-- Zipcode -->
+                <label for="ZipCode">Zip Code&#58;</label>
+                <input type="text" class="Required" Name="ZipCode" id="ZipCode" size="6" maxlength="5" placeholder="50401" required><br><br>
+
+                <!-- Full Name -->
+                <label for="FullName">Name&#58;</label>
+                <input type="text" class="Required" name="FullName" id="FullName" size="60" maxlength="60" autocomplete="on"
+                placeholder="Harold Hill" required>
+
+            </div> <!-- Closing div tag for Name and Address Section. -->
+
+            <!-- Email, Telephone, and URL Section.  All the fields are required and have placeholders. The tel and url input types include the pattern attribute and the url one includes popup hint. -->
+            <div class="PracticeSections">
+
+                <h2>Email, Telephone, and URL</h2>
+
+                <!-- Email -->
+                <label for="Email">Email&#58;</label>
+                <input type="email" class="Required" name="EmailField" id="Email" size="50" maxlength="50" multiple
+                placeholder="harold.hill@gmail.com" required><br><br>
+
+                <!-- Home Telephone Number -->
+                <label for="HomeTelephoneNumber">Home Telephone Number&#58;</label>
+                <input type="tel" class="Required" name="HomeTelephoneNumber" id="HomeTelephoneNumber" size="16" maxlength="16"
+                placeholder="000-000-0000" pattern="\d{3}[\-]\d{3}[\-]\d{4}" required><br><br>
+
+                <!-- Mobile Telephone Number -->
+                <label for="MobileTelephoneNumber">Mobile Telephone Number&#58;</label>
+                <input type="tel" class="Required" name="MobileTelephoneNumber" id="MobileTelephoneNumber" size="16" maxlength="16"  placeholder="000-000-0000" pattern="\d{3}[\-]\d{3}[\-]\d{4}" required><br><br>
+
+                <!-- Web Site URL-->
+                <label for="URL">Web Site&#58;
+                <input type="url" class="Required" name="URL" id="URL" size="30" maxlength="30" placeholder="http://mywebsite.com"
+                pattern="(http)://.+" required><span class="FormHint">Proper format "http://newssite.com"</span></label>
+
+            </div> <!-- Closing div tag for Email, Telephone, and URL section. -->
+
+            <!-- Sex and Age Section.  Both Sex and Age are implemented using radio buttons. -->
+            <div class="PracticeSections">
+
+                <h2>Sex and Age</h2>
+
+                <!-- Sex -->
+                Sex&#58;
+                <label>
+                <input class="RadioAndCheck" type="radio" name="Sex" value="Male" required>Female
+                </label>
+
+                <label>
+                <input class="RadioAndCheck" type="radio" name="Sex" value="Female" required>Male
+                </label><br><br>
+
+                <!-- Age Group -->
+                Age Group&#58;
+                <label >
+                <input class="RadioAndCheck" type="radio" name="AgeGroup" value="18-30" required>18&#45;30
+                </label>
+
+                <label >
+                <input class="RadioAndCheck" type="radio" name="AgeGroup" value="31-40" required>31&#45;40
+                </label>
+
+                <label >
+                <input class="RadioAndCheck" type="radio" name="AgeGroup" value="41-50" required>41&#45;50
+                </label>
+
+                <label >
+                <input class="RadioAndCheck" type="radio" name="AgeGroup" value="51-60" required>51&#45;60
+                </label>
+
+                <label >
+                <input class="RadioAndCheck" type="radio" name="AgeGroup" value="61-70" required>61&#45;70
+                </label>
+
+                <label >
+                <input class="RadioAndCheck" type="radio" name="AgeGroup" value="71-80" required>71&#45;80
+                </label>
+
+                <label >
+                <input class="RadioAndCheck" type="radio" name="AgeGroup" value="81-100" required>81&#45;100
+                </label>
+
+            </div> <!-- Closing div tag for Sex and Age section. -->
+
+            <!-- Password and Privacy Section.  This section includes the password input type with the pattern and placeholder attributes and check buttons for Privacy Preferences.  -->
+            <div class="PracticeSections">
+
+                <h2>Password and Privacy Preferences</h2>
+
+                <!-- Password -->
+                <label for="Password">Password&#58;
+                <input type="password" class="Required" name="Password" id="Password" size="10" maxlength="10" placeholder="" pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$" required><span class="FormHint">Password must contain:<br> Eight or more characters<br>At least one number<br>Contain at least one lowercase letter<br>At least one uppercase letter</span></label><br><br>
+
+                <!-- Privacy Preferences -->
+                Privacy Preferences&#58;<br>
+                <label>
+                <input class="RadioAndCheck" type="checkbox" name="Marketing Preferences" value="Email">Opt-out Email
+                </label><br>
+
+                <label>
+                <input class="RadioAndCheck" type="checkbox" name="Marketing Preferences" value="Mail">Opt-out Mail
+                </label><br>
+
+                <label>
+                <input class="RadioAndCheck" type="checkbox" name="Marketing Preferences" value="Phone">Opt-out Phone
+                </label><br>
+
+                <label>
+                <input class="RadioAndCheck" type="checkbox" name="Marketing Preferences" value="Text">Opt-out Text Messages/SMS
+                </label><br>
+
+            </div> <!-- Closing div tag for Password and Privacy Section. -->
+
+            <!-- Dates and Times Sections.  This section includes the date, dime, datetime, datetime-local, week, and month input types.  The pattern attribute which is not allowed with these input types was implemented using Javascript with the function ChangePlaceholderAndColor with the onchange event.  The field indicates an invalid response with a red border that is permanent until the correct format is used. No pattern matching was used with the week and month input types and datetime is a disabled field used as an example.  A permanent format hint was used in place of the placeholder attribute.  A popup hint was not implemented due to Chrome's automated fields.  -->
+            <div class="PracticeSections">
+
+                <h2>Dates and Times</h2>
+
+                <!-- Current Date -->
+                <label for="Date">Current Date&#58; <span class="DateAndTimeFormat">(Format: mm/dd/yyyy) </span></label>
+                <input type="date" class="RequiredInvalid" name="Date" id="Date" required onchange="TestPattern(Date, /^(?:(0[1-9]|1[012])[\/.](0[1-9]|[12][0-9]|3[01])[\/.](19|20)[0-9]{2})$/, false);"><br><br>
+
+                <!-- Current Time -->
+                <label for="Time">Current Time&#58; <span class="DateAndTimeFormat">(Format: hh:mm AM) </span></label>
+                <input type="time" class="RequiredInvalid" name="Time" id="Time" required onchange="TestPattern(Time, /^(0?[1-9]|1[012])(:[0-5]\d) [APap][mM]$/, false);" ><br><br>
+
+                <!-- Example of UTC Date and Time -->
+                <label for="DateTimeUTC">Example of UTC Date and Time&#58;</label>
+                <input type="datetime" class="NotRequired DateTime" name="DateTimeUTC" id="DateTimeUTC" value="2014-08-20T19:23:25Z" min="2014-08-20T19:23:25Z" disabled><br><br>
+
+                <!-- Current Date and Time -->
+                <label for="DateTimeLocal">Current Date and
+                Time&#58; <span class="DateAndTimeFormat">(Format: mm/dd/yyyy hh/mm AM) </span></label>
+                <input type="datetime-local" class="RequiredInvalid DateTime" name="DateTimeLocal" id="DateTimeLocal" required onchange="TestPattern(DateTimeLocal,
+                /^(?:(0[1-9]|1[012])[\/.](0[1-9]|[12][0-9]|3[01])[\/.](19|20)[0-9]{2}) (0?[1-9]|1[012])(:[0-5]\d) [APap][mM]$/, false);" ><br><br>
+
+                <!-- Current Week -->
+                <label for="Week">Current Week&#58; <span class="DateAndTimeFormat">(Format: Week number, yyyy) </span></label>
+                <input type="week" class="NotRequired" name="Week" id="Week"><br><br>
+
+                <!-- Current Month -->
+                <label for="Month">Current Month&#58; <span class="DateAndTimeFormat">(Format: month name, yyyy) </span></label>
+                <input type="month" class="NotRequired" name="Month" id="Month" ><br><br>
+
+            </div> <!-- Closing div tag for Dates and Times Section. -->
+
+            <!-- Files and Search.  This section includes the file and search input types. Search is implemented with a list using the datalist element and a GO button using the button input type to take the user to a web site containing information about the their search choice.  The GO button was implemented using Javascript with the onclick event.  All choices fo the same web site.  -->
+            <div class="PracticeSections">
+
+                <h2>Files and Search</h2>
+
+                <!-- Upload -->
+                <label for="UploadFile">Upload files&#58;</label><br>
+                <input type="file" class="NotRequired" name="UploadFile" id="UploadFile" multiple><br><br>
+
+                <!-- Search -->
+                <label for="Search">Search the list for news items&#58;</label><br>
+                <input type="search" class="NotRequired" name="Search" id="Search" list="SearchList">
+                <datalist id="SearchList">
+                    <option value="Ferguson">
+                    <option value="Gaza">
+                    <option value="Ukraine">
+                </datalist>
+
+                <!-- GO -->
+                <input type="button" class="Go" value="GO" onclick="if (Search.value)
+                 window.location='http://therealnews.com/t2/';">
+
+            </div> <!-- Closing div tag for the afile and Search Section. -->
+
+            <!-- Numbers Section.  This section includes the number and range input types.  There are two number fields, one without the step attribute and one with the step attribute.  The one without the step attribute uses in-range and out-of-range to validate the user input with FireFox and Chrome and invalid and valid for Microsoft while the one with the step attribute uses valid and invalid to validate the user input for all three browsers.  The differentiation is due to the fact that in-range and out-of-range does not include the step attribute in its test.  The result from the range input type is shown in a disabled number field using Javascript to get and set the results and the event oninput for Firefox and Chrome and onchange for Microsoft. -->
+            <div class="PracticeSections">
+
+                <h2>Numbers</h2>
+
+                <!-- Choose or enter a number between 48 and 134. -->
+                <label for="Number">Choose or enter a number between 48 and 134&#58;</label><br>
+                <input type="number" class="InOutRange" name="Number" id="Number" min="48" max="134"><br><br>
+
+                <!-- Choose or enter a number between 0 and 100 that is divisable by 3. -->
+                <label for="NumberStep">Choose or enter a number between 0 and 100 that is divisible by 3&#58;</label><br>
+                <input type="number" class="ValidateStep" name="NumberStep" id="NumberStep" min="0" max="100" step="3"><br><br>
+
+                <!-- Choose a number by sliding the circle or square left and right. -->
+                <label for="Range">Choose a number by sliding the circle or square left and right&#58;</label><br>
+                <input type="range" class="NoBorder" name="Range" id="Range" min="0" max="100" step="3" value="51"
+                oninput="Results.value = Range.value;" onchange="Results.value = Range.value;"><br><br>
+
+                <!-- Slider Results -->
+                <label for="Results">Slider Results&#58;</label>
+                <input type="number" name="Results" id="Results" disabled>
+
+            </div> <!-- Closing div tag for Numbers Section. -->
+
+            <!-- Comments and Color Section.  This sections includes the textarea type and the color input type.  A user can change the background color of Comments, the textarea type, with the Color field.  Javascript was used with the oninput event to get and set the Comments field background color. -->
+            <div class="PracticeSections">
+
+                <h2>Comments and Color</h2>
+
+                <!-- Comments -->
+                <label for="Comments">Comments&#58;</label><br>
+                <textarea name="Comments" class="NotRequired" id="Comments" cols="45" rows="6" spellcheck="true"></textarea><br><br>
+
+                <!-- Color -->
+                <label for="Color">Choose or enter background color for Comments area&#58;</label><br>
+                <input type="color" class="NotRequired" name="Color" id="Color" oninput="document.PracticeForm.Comments.style.background = Color.value;">
+
+            </div>  <!-- Closing div tag for Comments and Color Seciton. -->
+
+            <!-- Submit and Reset Buttons -->
+            <div id="SubmitReset">
+
+                <button class="Submit" type="submit">Submit</button>
+                <button class="Reset" type="reset">Reset</button>
+
+            </div> <!-- Closing div tag for Submit and Reset Buttons. -->
+
+        </form>
+
+    </main>
+
+</body>
+</html>

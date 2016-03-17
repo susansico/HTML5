@@ -1,0 +1,136 @@
+/* HTML5 Geolocation API: sico-unit-7-geolocation-api-hw.css */
+
+/* Tag Selectors */
+body {
+    font:88%/1.5em Verdana, Arial, sans-serif;
+    color:#FFF; /* White */
+    margin:0 auto;
+    padding:0;
+    background:#000; /* Black */
+}
+
+header {
+    width:1125px;
+    margin:0 auto;
+    background:#C96; /* Mocha */
+    border:2px solid #963; /* Deep Mocha */
+    display:block;
+}
+
+header h1 {
+    margin-bottom:0;
+    font:bold 4.0em Calisto, Georgia, serif;
+    color:#963; /* Deep Mocha */
+    text-shadow:#000 3px 3px 4px; /* Black */
+    opacity: 0.9;
+    text-align:center;
+}
+
+/* Navigation */
+nav {
+    width:1125px;
+    margin:20px 0 0 0;
+    padding-bottom:1px;
+    background:#963; /* Deep Mocha */
+}
+
+nav ul {
+    margin:0;
+    padding-right:30px;
+    text-align:center;
+}
+
+nav ul li {
+    font-size:115%;
+    font-weight:bold;
+    line-height:2.5em;
+    padding:0 5px 0;
+    list-style:none;
+    display:inline;
+}
+
+nav a:link {
+    color:#C96; /* Mocha */
+    text-shadow:#000 3px 2px 4px; /* Black */
+    font-weight:bold;
+    text-decoration:none;
+}
+
+footer a:link {
+    color:#966; /* Peru */
+    text-shadow:#000 2px 2px 3px; /* Black */
+    font-weight:bold;
+    text-decoration:none;
+}
+
+/* Navigation and footer links styling. */
+nav a:visited, footer a:visited {
+    color:#FC9; /* Beige */
+    text-shadow:#000 3px 2px 4px; /* Black */
+}
+
+nav a:hover, footer a:hover {
+    text-decoration:underline;
+}
+
+main {
+    width:1125px;
+    margin:0 auto;
+    color:#300; /* Very Dark Brown */
+    background:#faebd7; /* Antique White, Moccasin */
+    border:2px solid #963; /* Deep Mocha */
+    display:block;
+}
+
+h3 {
+    font:bold Calisto, Georgia, serif;
+    color:#cd853f; /* Peru */
+    text-shadow:#000 2px 2px 3px; /* Black */
+    font-size:1.75em;
+    margin-left:30px;
+}
+
+div {
+    margin:0 0 0 40px;
+}
+
+/* Buttons */
+input {
+    font-size:135%;
+    color:#963; /* Deep Mocha */
+    text-shadow:#000 1px 1px 1px;
+    font-weight:bold;
+    margin:0 0 20px 35px;
+    background:#C96; /* Mocha */
+    border:2px solid #963; /* Deep Mocha */
+    border-radius:8px;
+}
+
+/* ID Selectors */
+#Map { /* Google Map */
+    margin:20px 20px 20px 35px;
+    width:900px;
+    height:500px;
+    border:2px solid #cd853f; /* Peru */;
+}
+
+#BottomInfoAndFooter {
+    width:1125px;
+    color:#C96; /* Mocha */
+    text-shadow:#000 4px 4px 5px; /* Black */
+    font-weight:bold;
+    margin:0 auto;
+    padding:20px 0;
+    text-align:center;
+    background:#963; /* Deep Mocha */
+    border:2px solid #633; /* Dark Brown */
+}
+
+#CopyrightFont {
+    font-size:.75em;
+}
+
+/* Class Selectors */
+.BottomInfoAndFooterFont {
+    font-size:.90em;
+}

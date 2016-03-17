@@ -1,0 +1,163 @@
+/* HTML5 Drag and Drop API: sico-unit-8-drag-and-drop-api-hw.css */
+
+/* Tag Selectors */
+body {
+    font:84%/1.5em Verdana, Arial, sans-serif;
+    color:#300; /* Very Dark Brown */
+    margin:0 auto;
+    padding:0;
+    background:#000; /* Black */
+}
+
+header {
+    width:1125px;
+    margin:0 auto;
+    background:#C96; /* Mocha */
+    border:1px solid #933; /* Deep Mocha */
+    display:block;
+}
+
+header h1 {
+    /*margin-bottom:0;*/
+    font:bold 3.5em Calisto, Georgia, serif;
+    color:#933; /* Deep Mocha */
+    text-shadow:#000 2px 2px 3px; /* Orange-Red */
+    opacity: 1.0;
+    text-align:center;
+}
+
+h2 {
+    color:#933; /* Deep Mocha */
+    text-shadow:#C96 1px 1px 2px; /* Mocha */
+    font-size:1.7em;
+}
+
+ul {
+    width:175px;
+    height:200px;
+    padding-top:10px;
+    Background:#FC3; /* Shade of Yellow */
+    border:1px solid #933; /* Deep Mocha  */
+}
+
+ul li {
+    margin:0;
+    padding:0;
+    color:#C00; /* Rust */
+    font-size:115%;
+    font-weight:bold;
+    line-height:2.0em;
+    list-style:none;
+}
+
+img {
+    margin:10px 50px;
+    border:1px solid #933; /* Deep Mocha */
+}
+
+main {
+    width:1125px;
+    margin:0 auto;
+    background:#fff8dc; /*  Cornsilk */
+    border:1px solid #933; /* Deep Mocha */
+    position:relative;
+    display:block;
+}
+
+/* Footer links styling. */
+footer a:link {
+    color:#633; /*  */
+    text-shadow:#000 1px 1px 1px; /* Black */
+    font-weight:bold;
+    text-decoration:none;
+}
+
+footer a:visited {
+    color:#FC9; /* Beige */
+    text-shadow:#000 3px 2px 4px; /* Black */
+}
+
+footer a:hover {
+    text-decoration:underline;
+}
+
+/* ID Selectors */
+#ShoppingListAndBoxes {
+    margin:0 0 0 30px;
+    float:left;
+}
+
+#ShoppingBoxBig {
+    width:100px;
+    height:100px;
+    margin:10px 0;
+    background:#0C3;
+}
+
+#ShoppingBoxSmall {
+    width:50px;
+    height:50px;
+    margin:10px 0;
+    background:#C06; /* Fuschia */
+}
+
+#ShoppingBoxContainer {
+    width:250px;
+    height:250px;
+    margin:20px auto;
+    background:#66F; /* Medium Blue */
+}
+
+#ShoppingImages {
+    margin:0 520px 0 325px;
+}
+
+#ShoppingCart {
+    margin:0 30px 0 0;
+    float:right;
+}
+
+#Cart {
+    width:450px;
+    height:500px;
+    padding:5px 0 0 20px;
+    color:#C00; /* Rust */
+    font-size:115%;
+    font-weight:bold;
+    line-height:.75em;
+    background:#F60; /* Shade of Orange */
+    border:1px solid #933; /* Deep Mocha  */
+}
+
+#ShoppingCartNote {
+    margin-bottom:20px;
+    color:#300; /* Very Dark Brown */
+    font-size:.75em;
+}
+
+#BottomInfoAndFooter {
+    width:1125px;
+    color:#933; /* Deep Mocha */
+    text-shadow:#000 1px 1px 1px; /* Black */
+    font-weight:bold;
+    margin:0 auto;
+    padding:20px 0;
+    text-align:center;
+    background:#C96; /* Mocha */
+    border:1px solid #933; /* Deep Mocha */
+}
+
+#CopyrightFont {
+    font-size:.75em;
+}
+
+/* Class Selectors */
+.BottomInfoAndFooterFont {
+    font-size:.85em;
+}
+
+.BrClear {
+    clear:both;
+}
+
+

@@ -1,0 +1,200 @@
+/* HTML5 Video and Audio: sico-unit-4-video-and-audio-hw.css */
+
+/* Tag Selectors */
+body {
+    font:92%/1.5em Verdana, Arial, sans-serif;
+    color:#000; /* Black */
+    margin:0 auto;
+    padding:0;
+    background:#DEB887; /* Burlywood */
+}
+
+header, nav, main {
+    display:block;
+}
+
+/* Main Heading */
+header {
+    width:1000px;
+    margin:0 auto;
+    background:#000; /* Black */
+    border:1px solid #930;
+    text-align:center;
+}
+
+header h1 {
+    font:bold 3.0em Georgia, Calisto, serif;
+    color:#C60;
+    text-shadow:#F90 2px 2px 2px;
+    margin:0; /* Margin explicitly set to 0 so that there is no bottom margin, allowing for the navigation bar to be at the bottom of the header. */
+    padding-top:50px;
+}
+
+/* Navigation */
+nav {
+    width:1000px;
+    margin:0;
+    padding-bottom:1px;
+    background:#ffdead; /* Navajo White */
+}
+
+nav ul {
+    margin:0;
+    padding-right:30px;
+    text-align:center;
+}
+
+nav ul li {
+    font-size:90%;
+    font-weight:bold;
+    line-height:2.5em;
+    padding:0 5px 0;
+    list-style:none;
+    display:inline;
+}
+
+nav a:link {
+    color:#630; /* Dark Brown */
+    font-weight:bold;
+    text-decoration:none;
+}
+
+/* Navigation and footer links styling. */
+nav a:visited {
+    color:#930; /* Chestnut Brown */
+    text-shadow:#F30 3px 2px 4px; /* Orange */
+}
+
+footer a:link {
+    color:#F90; /* Yellow */
+    font-weight:bold;
+    text-decoration:none;
+}
+
+footer a:visited {
+    color:#F60; /* Light Orange */
+    text-shadow:#F30 3px 2px 4px; /* Orange */
+}
+
+nav a:hover, footer a:hover {
+    text-decoration:underline;
+}
+
+main {
+    width:1000px;
+    margin:10px auto 0;
+    background:#FFF; /* White */
+    border-bottom:1px solid #CD5C5C; /* Chestnut, Indian Red */
+    position:relative;
+}
+
+/* Smaller audio width to downsize Microsoft audio player. */
+audio {
+    width:300px;
+}
+
+/* Date of news items. */
+time {
+    color:#600; /* Dark Rust */
+    font-weight:bold;
+}
+
+/* Audio Buttons */
+button {
+    margin-top:5px;
+    margin-left:.1em; /* For a little bit of space between first button and left margin. */
+    font-size:91%;
+    color:#FFF; /* White */
+    font-weight:bold;
+    background-color:#333; /* Dark gray to fit in with Microsoft, Firefox, and Chrome player colors. */
+    border:1px solid #300; /* Dark Maroon */
+    border-radius:4px;
+}
+
+/* ID Selectors */
+#NewsColumnLeft {
+    width:330px;
+    float:left;
+}
+
+#NewsColumnCenter {
+    margin:0 335px;
+    background:#faebd7; /* Antique White, Moccasin */
+}
+
+#NewsColumnRight {
+    width:330px;
+    float:right;
+    margin:0;
+    background:#fff8dc; /* Cornsilk */
+}
+
+/* Descriptive line under main heading. */
+#HeaderMainTitleDescription {
+    font:1.6em Caledonia, Garamond, serif;
+    color:#C60;
+    text-shadow:#933 1px 1px 1px;
+}
+
+#HeaderMainTitleDescriptionPadding {
+    padding-bottom:50px;
+}
+
+#BottomInfoAndFooter {
+    width:1000px;
+    color:#C60;; /* Light Brown */
+    font-weight:bold;
+    margin:10px auto 0;
+    padding:20px 0;
+    text-align:center;
+    background:#000; /* Black */
+}
+
+#CopyrightFont {
+    font-size:.70em;
+}
+
+/* Class Selectors */
+
+/* Smaller size than <small> tag. */
+.NewsItemsHeader {
+    margin:0;
+    background:#C96; /* Mocha */
+    padding-top:1px;
+    border-bottom:1px solid #930; /* Chestnut */
+    text-align:center;
+}
+
+.NewsItemsHeader h2{
+    font:bold 1.33em Georgia, Calisto, serif;
+    color:#000; /* Black */
+    text-shadow:#600 1px 1px 1px; /* Dark Rust */
+}
+
+.NewsItemsBorder {
+    border:1px solid #d2691e; /* Chocolate (web), Cinnamon, Cocoa Brown */
+}
+
+/* Space between news items in same column. */
+.NewsItemsNotFirstRowTopMargin {
+    margin-top:15px;
+}
+
+.NewsItemsTitleAndDescription {
+    margin:0 10px;
+    color:#000; /* Black */
+    font-size:91%; /* Smaller font than body font */
+}
+
+.NewsItemsTitleAndDescription h3 {
+    font:bold 1.30em Georgia, Calisto, serif;
+    color:#C30;  /* Deep Burnt Orange */
+}
+
+.BottomInfoAndFooterFont {
+    font-size:.78em;
+}
+
+.BrClear {
+    clear:both;
+}
